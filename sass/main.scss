@@ -459,6 +459,12 @@ footer {
 .nav-drawer {
   display: none;
 }
+/*
+  Fix collapsed menu
+*/
+.nav-drawer[aria-expanded="false"] > ul {
+  left: -1000px;
+}
 
 .snippet {
     &:not(:last-child):after {

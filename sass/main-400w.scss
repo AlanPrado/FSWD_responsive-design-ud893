@@ -19,6 +19,11 @@
 
   }
   .content {
+    .hero {
+      background-size: contain;
+      min-height: 150px;
+    }
+
     .weather {
 
       .weather__today__desc {
