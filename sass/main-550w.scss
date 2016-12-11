@@ -1,13 +1,16 @@
 @media screen and (max-width: 550px) {
 
-  .header__logo {
-    font-size: 1em;
-    max-width: 20%;
-  }
 
-  .header__title {
-    font-size: 2em;
-    flex-grow: 1;
+  .header {
+    .header__logo {
+      font-size: 1em;
+      max-width: 20%;
+    }
+
+    .header__title {
+      font-size: 1.5em;
+      flex-grow: 1;
+    }
   }
 
   .content {
@@ -15,7 +18,7 @@
       min-width: 100%;
     }
   }
-  
+
   footer {
     padding: 0 1em;
 
