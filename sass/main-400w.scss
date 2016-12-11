@@ -1,0 +1,21 @@
+@media screen and (max-width: 400px) {
+
+  .header__logo {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1em;
+    flex-grow: 0;
+  }
+
+  .snippet {
+    flex-direction: column;
+    height: 100%;
+
+    .snippet__thumbnail {
+      width: 100%;
+    }
+
+  }
+}

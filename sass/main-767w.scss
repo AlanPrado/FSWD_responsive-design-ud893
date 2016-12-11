@@ -1,0 +1,28 @@
+@media screen and (max-width: 767px) {
+  .description {
+    display: none;
+  }
+  .content {
+    .hero {
+      width: 60%;
+      order: -1;
+    }
+    .weather {
+      width: 40%;
+      order: -1;
+    }
+    .top-news {
+      width: 100%;
+    }
+    .scores {
+      width: 100%;
+    }
+  }
+
+  .nav-drawer {
+    display: block;
+  }
+  .header {
+    z-index: 0;
+  }
+}

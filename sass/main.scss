@@ -1,0 +1,425 @@
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
+header, nav, footer, section, article, div {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+body {
+  font-family: Roboto;
+  font-size: 14px;
+  color: #424242;
+  display: flex;
+  flex-flow: column;
+  background: #f2d7de;
+}
+
+footer {
+  border-top: 1px solid #E0E0E0;
+  padding: 1em;
+  width: 100%;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    a {
+      text-decoration: none;
+      color: #333;
+      padding: 1.5em;
+    }
+  }
+}
+
+.max-width-900 {
+  max-width: 900px;
+}
+
+/* adapted from stack overflow post
+   http://stackoverflow.com/questions/3922739/limit-text-length-to-n-lines-using-css
+ */
+.truncate-title, .truncate-lines {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+}
+
+.truncate-title {
+  font-size: 1.2em;
+  line-height: 1.8em;     /* fallback */
+  max-height: 1.8em;      /* fallback */
+  -webkit-line-clamp: 1; /* number of lines to show */
+}
+
+.truncate-lines {
+  font-size: 1em;
+  line-height: 1.5em;
+  max-height: 7.5em;
+  -webkit-line-clamp: 5;
+}
+
+.separator > * {
+  position: relative;
+
+  &:not(:last-child):after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      border-top: 1px #e3e3e3 solid;
+      bottom: 0;
+  }
+}
+
+.news__more {
+  float: right;
+  font-size: .8em;
+  color: #333;
+  text-decoration: none;
+}
+
+.container {
+  margin: 0 auto;
+  background: white;
+}
+
+.header {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  min-height: 5px;
+  transition: min-height 0.3s;
+  z-index: 1;
+
+  .header__inner {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .header__logo {
+    max-width: 100%;
+    max-height: 100%;
+    width: 72px;
+    padding: 0.5em;
+  }
+
+  .header__title {
+    font-weight: 300;
+    font-size: 3em;
+    flex-grow: 1;
+    margin: 0.5em 0.25em;
+    color: #212121;
+    text-align: center;
+  }
+
+}
+
+
+.nav {
+  margin-left: auto;
+  margin-right: auto;
+
+  a {
+    text-decoration: none;
+    color: #616161;
+    padding: 1.5em;
+
+    &:hover {
+      text-decoration: underline;
+      color: #212121;
+    }
+  }
+
+  .nav__list {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+}
+
+.nav__item {
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 24px;
+  padding: 24px;
+  text-transform: uppercase;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 0.5em;
+}
+
+.hero {
+  width: 100%;
+  position: relative;
+  background-image: url("/images/dog.jpg");
+  background-size: cover;
+  height: 300px;
+
+  article {
+    box-sizing: border-box;
+    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    bottom: 0;
+    height: 40%;
+    width: 100%;
+    color: #fff;
+    padding: 1em;
+  }
+}
+
+/*
+ *
+ * Top News
+ *
+ */
+
+.top-news {
+  height: 300px;
+  border-bottom: 1px solid #E0E0E0;
+  padding: 1em;
+  font-size: 1.1em;
+
+  .news__title {
+    font-weight: 300;
+    border-bottom: 1px solid #E0E0E0;
+    line-height: 24px;
+    font-size: 16px;
+  }
+
+  .top-news__item {
+    border-bottom: 1px solid #E0E0E0;
+    padding: 1em 0;
+    line-height: 19.2px;
+
+    &:before {
+      content: "» ";
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    a {
+     text-decoration: none;
+     color: #666;
+     padding: 1.5em inherit;
+
+     &:hover,&:active {
+       text-decoration: underline;
+     }
+   }
+  }
+
+}
+
+
+/*
+ *
+ * Sport Scores
+ *
+ */
+.scores__table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th, td {
+    padding: 1em;
+  }
+  th {
+    color: #fff;
+    font-weight: 300;
+    background-color: #78909C;
+  }
+  tr:nth-child(odd) td {
+    background-color: #fff;
+  }
+  tr:nth-child(even) td {
+    background-color: #eceff1;
+  }
+  td.winner {
+    font-weight: bold;
+  }
+  td:nth-child(3) {
+    text-align: right;
+  }
+  td:nth-child(2),td:nth-child(5) {
+    text-align: center;
+  }
+}
+
+/*
+ *
+ * Weather
+ *
+ */
+.weather {
+  padding: 1em;
+}
+
+.weather__location {
+  display: block;
+  font-weight: 300;
+  font-size: 1.5em;
+}
+
+.weather__desc {
+  display: block;
+  font-size: 1.2em;
+}
+
+.weather__today {
+  width: 60%;
+  vertical-align: middle;
+}
+
+.weather__today__image {
+  vertical-align: middle
+}
+
+.weather__today__temp {
+  font-size: 3em;
+}
+
+.weather__today__deg {
+  font-size: 2em;
+  display: inline;
+}
+
+.weather__next__item {
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+
+  span {
+    display: block;
+  }
+}
+
+.weather__next__image {
+  width: 100%;
+}
+
+
+/*
+ *
+ * Recent News
+ *
+ */
+
+.recent-news {
+  clear: both;
+  padding: 1em;
+}
+
+.snippet {
+  clear: both;
+  margin: 24px 0;
+  display: flex;
+  height: 130px;
+
+  .snippet__thumbnail {
+    flex-shrink: 0;
+    margin-right: 1em;
+    width: 160px;
+  }
+
+  .snippet__post {
+    flex-basis: calc(100% - 160px - 1em);
+    overflow: hidden;
+
+    .snippet__post__title {
+      font-weight: 500;
+
+      a {
+        text-decoration: none;
+        color: #666;
+        padding: 1.5em inherit;
+        font-size: 1.1em;
+      }
+
+      a:hover,
+      a:active {
+        text-decoration: underline;
+      }
+
+      p {
+        overflow: hidden;
+      }
+
+    }
+
+  }
+
+}
+
+.navbar-header {
+  min-width: 100%;
+}
+
+.content {
+  .hero {
+    width: 50%;
+
+    .description {
+      h2 {
+        font-size: 1.2em;
+      }
+
+      p {
+        font-size: 1em;
+      }
+    }
+
+  }
+  .top-news {
+    width: 50%;
+    height: auto;
+  }
+  .scores {
+    width: 60%;
+    overflow-x: auto;
+  }
+  .weather {
+    width: 40%;
+  }
+
+}
+
+.nav-drawer {
+  display: none;
+}
+
+.snippet {
+    &:not(:last-child):after {
+      bottom: -1em;
+    }
+}
