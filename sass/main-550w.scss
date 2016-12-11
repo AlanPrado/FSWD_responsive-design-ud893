@@ -1,5 +1,7 @@
 @media screen and (max-width: 550px) {
-
+  .scores__table__location {
+    display: none;
+  }
 
   .header {
     .header__logo {
@@ -17,6 +19,19 @@
     .hero , .top-news, .scores, .weather {
       min-width: 100%;
     }
+
+    .weather {
+
+      .weather__today {
+        flex-direction: row;
+      }
+
+      .weather__location {
+        text-align: left;
+      }
+
+    }
+
   }
 
   footer {

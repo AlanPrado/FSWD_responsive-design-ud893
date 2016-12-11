@@ -1,7 +1,4 @@
 @media screen and (max-width: 767px) {
-  .description {
-    display: none;
-  }
   .content {
     .hero {
       width: 60%;
@@ -10,6 +7,14 @@
     .weather {
       width: 40%;
       order: -1;
+
+      .weather__location {
+        text-align: center;
+      }
+
+      .weather__today {
+        flex-direction: column;
+      }
     }
     .top-news {
       width: 100%;

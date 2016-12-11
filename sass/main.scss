@@ -7,6 +7,10 @@ h1, h2, h3, h4, h5 {
   margin: 0;
 }
 
+h2 {
+  font-size: 1.2em;
+}
+
 header, nav, footer, section, article, div {
   box-sizing: border-box;
 }
@@ -67,9 +71,9 @@ footer {
 }
 
 .truncate-lines {
-  font-size: 1em;
-  line-height: 1.5em;
-  max-height: 7.5em;
+  font-size: 1.1em;
+  line-height: 1.1em;
+  max-height: 5.5em;
   -webkit-line-clamp: 5;
 }
 
@@ -93,9 +97,11 @@ footer {
   text-decoration: none;
 }
 
-.container {
+.my-container {
   margin: 0 auto;
   background: white;
+  width: 100%;
+  padding: 15px;
 }
 
 .header {
@@ -173,7 +179,6 @@ footer {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 3px;
 }
 
 .hero {
@@ -197,6 +202,15 @@ footer {
   }
 }
 
+
+.news__title {
+  font-weight: 300;
+  border-bottom: 1px solid #E0E0E0;
+  line-height: 24px;
+  font-size: 16px;
+}
+
+
 /*
  *
  * Top News
@@ -208,13 +222,6 @@ footer {
   border-bottom: 1px solid #E0E0E0;
   padding: 1em;
   font-size: 1.1em;
-
-  .news__title {
-    font-weight: 300;
-    border-bottom: 1px solid #E0E0E0;
-    line-height: 24px;
-    font-size: 16px;
-  }
 
   .top-news__item {
     border-bottom: 1px solid #E0E0E0;
@@ -255,25 +262,41 @@ footer {
   th, td {
     padding: 1em;
   }
+
   th {
     color: #fff;
     font-weight: 300;
     background-color: #78909C;
+    text-align: center;
   }
-  tr:nth-child(odd) td {
-    background-color: #fff;
+
+  tr {
+    &:nth-child(odd) td {
+      background-color: #fff;
+    }
+    &:nth-child(even) td {
+      background-color: #eceff1;
+    }
   }
-  tr:nth-child(even) td {
-    background-color: #eceff1;
-  }
-  td.winner {
+
+  .winner {
     font-weight: bold;
+    color: blue;
   }
-  td:nth-child(3) {
+  .looser {
+    color: red;
+  }
+  .scores__table__location {
+    word-break: break-all;
+  }
+  .scores__table__date, .scores__table__location, .scores__table__score {
+    text-align: center;
+  }
+  .scores__table__team1 {
     text-align: right;
   }
-  td:nth-child(2),td:nth-child(5) {
-    text-align: center;
+  .scores__table__team2 {
+    text-align: left;
   }
 }
 
@@ -284,51 +307,65 @@ footer {
  */
 .weather {
   padding: 1em;
-}
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-.weather__location {
-  display: block;
-  font-weight: 300;
-  font-size: 1.5em;
-}
-
-.weather__desc {
-  display: block;
-  font-size: 1.2em;
-}
-
-.weather__today {
-  width: 60%;
-  vertical-align: middle;
-}
-
-.weather__today__image {
-  vertical-align: middle
-}
-
-.weather__today__temp {
-  font-size: 3em;
-}
-
-.weather__today__deg {
-  font-size: 2em;
-  display: inline;
-}
-
-.weather__next__item {
-  display: inline-block;
-  width: 20%;
-  text-align: center;
-
-  span {
+  .weather__location {
     display: block;
+    font-weight: 400;
+    font-size: 1.8em;
   }
-}
 
-.weather__next__image {
-  width: 100%;
-}
+  .weather__today {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    .weather__today__desc {
+      display: block;
+      font-size: 1.7em;
+    }
+
+    .weather__today__image {
+      flex-grow: 0;
+      height: auto;
+      width: 50%;
+      max-width: 100%;
+    }
+
+    .weather__today__temp {
+      display: flex;
+      .weather__today__value {
+        font-size: 3em;
+      }
+      .weather__today__deg {
+        font-size: 2em;
+        display: inline;
+      }
+    }
+
+  }
+
+  .weather__next__item {
+    display: inline-block;
+    width: 20%;
+    text-align: center;
+    padding-right: 5px;
+
+    .weather__next__image {
+      max-height: 100px;
+      width: auto;
+      max-width: 100%;
+    }
+
+    span {
+      font-size: 1.2em;
+      display: block;
+    }
+  }
+
+}
 
 /*
  *
@@ -359,7 +396,7 @@ footer {
   }
 
   .snippet__post {
-    flex-basis: calc(100% - 160px - 1em);
+    flex-basis: calc(100% - 27% - 1em);
     overflow: hidden;
 
     .snippet__post__title {
@@ -376,13 +413,12 @@ footer {
       a:active {
         text-decoration: underline;
       }
-
-      p {
-        overflow: hidden;
-      }
-
     }
 
+    .snippet__post__text {
+      overflow: hidden;
+      text-align: justify;
+    }
   }
 
 }
