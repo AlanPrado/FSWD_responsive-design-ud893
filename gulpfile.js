@@ -11,7 +11,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const imagemin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
 
-const destDir = './dist/';
+const destDir = './docs/';
 const appDir = './app/';
 
 function styles(cb, dist) {
