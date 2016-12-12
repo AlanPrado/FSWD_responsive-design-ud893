@@ -1,0 +1,53 @@
+@media screen and (max-width: 400px) {
+
+  .description {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1em;
+    flex-grow: 0;
+  }
+
+  .snippet {
+    flex-direction: column;
+    height: 100%;
+
+    .snippet__thumbnail {
+      width: 100%;
+    }
+
+  }
+  .content {
+    .hero {
+      min-height: 200px;
+    }
+
+    .weather {
+
+      .weather__today__desc {
+        font-size: 1.5em;
+      }
+
+      .weather__today__temp {
+        .weather__today__value {
+          font-size: 1.5em;
+        }
+        .weather__today__deg {
+          font-size: 1em;
+        }
+      }
+    }
+
+    .scores__table {
+      .scores__table__date::before {
+        content: attr(data-abbreviation);
+      }
+      .scores__table__date span {
+        display: none;
+      }
+    }
+
+  }
+
+}
